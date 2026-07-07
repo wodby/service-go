@@ -9,9 +9,9 @@ labels:
 options:
 - version: '1.26'
   default: true
-  tag: 1.26-0.1.0
+  tag: 1.26-0.1.1
 - version: '1.25'
-  tag: 1.25-0.1.0
+  tag: 1.25-0.1.1
 
 endpoints:
 - name: go
