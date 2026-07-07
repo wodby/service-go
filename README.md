@@ -1,1 +1,1 @@
-# service-go
+# Go Wodby service
