@@ -19,7 +19,7 @@ service in the Wodby catalog.
 | Containers | `go` using `wodby/go`, build target |
 | Endpoints | `go`: HTTP 8080 (main) |
 | Service links | DBMS (`db`), optional, Mail Transfer Agent (`sendmail`), optional, Redis, optional |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile` |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Go boilerplate |
 | Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.1.0` |
 | Configuration | 1 integration slots |
 

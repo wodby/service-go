@@ -94,6 +94,11 @@ integrations:
 build:
   dockerfile: Dockerfile
   connect: true
+  templates:
+  - name: go
+    title: Go boilerplate
+    repo: https://github.com/wodby/go-boilerplate
+    branch: main
 
 helm:
   name: wodby
