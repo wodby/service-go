@@ -9,10 +9,10 @@ configuration for Go.
 - [Wodby service documentation](https://wodby.com/docs/2.0/services/)
 - [Service manifest reference](https://wodby.com/docs/2.0/services/template/)
 
-## Start with a template
+## Start with a boilerplate
 
-Use one of the source templates exposed by this service to start with
-compatible build configuration and Wodby CI:
+Use one of the boilerplates exposed by this service to start with compatible
+build configuration and Wodby CI:
 
 - [Go boilerplate](https://github.com/wodby/go-boilerplate)
 
@@ -31,7 +31,7 @@ compatible build configuration and Wodby CI:
 | Containers | `go` using `wodby/go`, build target |
 | Endpoints | `go`: HTTP 8080 (main) |
 | Service links | DBMS (`db`), optional, Mail Transfer Agent (`sendmail`), optional, Redis, optional |
-| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; starters: Go boilerplate |
+| Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Go boilerplate |
 | Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.1.0` |
 | Configuration | 1 integration slots |
 
