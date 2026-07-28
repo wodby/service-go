@@ -32,7 +32,7 @@ build configuration and Wodby CI:
 | Endpoints | `go`: HTTP 8080 (main) |
 | Service links | DBMS (`db`), optional, Mail Transfer Agent (`sendmail`), optional, Redis, optional |
 | Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Go boilerplate |
-| Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.1.0` |
+| Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.1.1` |
 | Configuration | 1 integration slots |
 
 ## Use this service

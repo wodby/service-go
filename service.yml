@@ -104,7 +104,9 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/go
   chart: oci://registry-1.docker.io/wodby/go
-  version: 0.1.0
+  version: 0.1.1
+  valueMappings:
+    serviceAccountName: serviceAccount.name
 
 workloads:
 - name: main
