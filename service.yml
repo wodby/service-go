@@ -100,11 +100,19 @@ build:
     repo: https://github.com/wodby/go-boilerplate
     branch: main
 
+deployment:
+  strategy: rolling
+  maxUnavailable: 0
+  maxSurge: 1
+  minReady: 10s
+  progressDeadline: 15m
+  shutdownGracePeriod: 30s
+
 helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/go
   chart: oci://registry-1.docker.io/wodby/go
-  version: 0.1.2
+  version: 0.2.0
   valueMappings:
     serviceAccountName: serviceAccount.name
     serviceAccountCreate: serviceAccount.create
