@@ -9,9 +9,9 @@ labels:
 options:
 - version: '1.26'
   default: true
-  tag: 1.26-0.1.6
+  tag: 1.26-0.1.7
 - version: '1.25'
-  tag: 1.25-0.1.6
+  tag: 1.25-0.1.7
 
   eol: '2026-08-19T00:00:00+00:00'
 endpoints:
