@@ -26,13 +26,13 @@ build configuration and Wodby CI:
 | --- | --- |
 | Service name | `go` |
 | Type | Application service |
-| Versions | `1.26` by default; also available: `1.25` |
+| Versions | `1.26` by default |
 | Workloads | `main` (Deployment), primary; scalable |
 | Containers | `go` using `wodby/go`, build target |
 | Endpoints | `go`: HTTP 8080 (main) |
 | Service links | DBMS (`db`), optional, Mail Transfer Agent (`sendmail`), optional, Redis, optional |
 | Application build | Git source connection enabled; Dockerfile: `Dockerfile`; boilerplates: Go boilerplate |
-| Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.2.1` |
+| Helm | chart `oci://registry-1.docker.io/wodby/go`; version `0.2.2` |
 | Configuration | 1 integration slots |
 
 ## Use this service

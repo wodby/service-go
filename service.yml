@@ -9,11 +9,7 @@ labels:
 options:
 - version: '1.26'
   default: true
-  tag: 1.26-0.1.11
-- version: '1.25'
-  tag: 1.25-0.1.10
-
-  eol: '2026-08-19T00:00:00+00:00'
+  tag: 1.26-r0
 endpoints:
 - name: go
   ports:
@@ -113,7 +109,7 @@ helm:
   name: wodby
   source: oci://registry-1.docker.io/wodby/go
   chart: oci://registry-1.docker.io/wodby/go
-  version: 0.2.1
+  version: 0.2.2
   valueMappings:
     serviceAccountName: serviceAccount.name
     serviceAccountCreate: serviceAccount.create
