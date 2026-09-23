@@ -10,6 +10,7 @@ options:
 - version: '1.26'
   default: true
   tag: 1.26-r0
+  devTag: 1.26-dev-r0
 endpoints:
 - name: go
   ports:
@@ -133,3 +134,26 @@ workloads:
       resources: resources
       env: envVars
       mounts: extraVolumeMounts
+
+workspace:
+  configuration: [/docker-entrypoint.sh, --configure-runtime]
+  runner:
+    workload: main
+    container: go
+    workingDirectory: /usr/src/app
+    homeDirectory: /home/wodby
+    username: wodby
+    uid: 1000
+    gid: 1000
+    port: 2222
+    command: [sudo, /usr/sbin/sshd, -D, -e, -f, /dev/null]
+  mounts:
+  - name: code
+    workload: main
+    container: go
+    path: /usr/src/app
+  preparation:
+  - name: dependencies
+    command: [workspace-go, prepare]
+    timeoutSeconds: 1800
+  reload: restart
