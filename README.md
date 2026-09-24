@@ -62,3 +62,16 @@ wodby service validate-manifest service.yml --org <org-id>
 ```
 
 See the [service manifest reference](https://wodby.com/docs/2.0/services/template/) and the [managed services index](https://github.com/wodby/services).
+
+## Development workspaces
+
+`workspace-go prepare` resolves the selected package's dependencies.
+`workspace-go start` recompiles and executes it on every application restart.
+`WORKSPACE_GO_PACKAGE` defaults to `.`; `WORKSPACE_GO_COMMAND` overrides startup.
+`HOST` and `PORT` default to `0.0.0.0` and `8080`, but the application must read them.
+Builds use temporary module metadata and `-mod=readonly`, preserving repository
+`go.mod` and `go.sum`. Fix dependency declarations deliberately before retrying a
+failed preparation. `go.work` projects need custom preparation/start commands.
+There is no automatic watcher. Existing Go build-cache settings are preserved.
+
+Requires a runtime image declaring workspace contract version 1. Ordinary and development option tags must use matching revisions.
