@@ -10,8 +10,8 @@ labels:
 options:
 - version: '1.26'
   default: true
-  tag: 1.26-r2
-  devTag: 1.26-dev-r2
+  tag: 1.26-r3
+  devTag: 1.26-dev-r3
 endpoints:
 - name: go
   ports:
@@ -157,4 +157,5 @@ workspace:
   - name: dependencies
     command: [workspace-go, prepare]
     timeoutSeconds: 1800
-  reload: restart
+  # workspace-go compiles the checkout again and restarts the application when a file changes.
+  reload: watch
