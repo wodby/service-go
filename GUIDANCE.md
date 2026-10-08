@@ -35,7 +35,7 @@ All three links are optional. A variable is present only while its link exists a
 
 ## In a development workspace
 
-- The checkout is mounted at `/usr/src/app`. The application is compiled from it each time the container starts, then executed. There is no file watcher: a code change takes effect only after a restart of the service.
+- The checkout is mounted at `/usr/src/app`. The application is compiled from it and run, and the checkout is watched: when a file changes, it is compiled again and the application is restarted with the new build, in the same container, usually within a few seconds. Nothing has to be restarted or deployed for a code change. A build that fails leaves the previous build running; the compiler's errors are in the service's logs.
 - Workspace setup resolves dependencies with `workspace-go prepare`. `go.mod` is required. Builds use `-mod=readonly` on a temporary copy of `go.mod` and `go.sum`, so the repository's files are never rewritten: a missing requirement or checksum fails the build and must be fixed in the repository with `go get` or `go mod tidy`.
 - The package built is `.`; `WORKSPACE_GO_PACKAGE` on the service selects another one, such as `./cmd/server`.
 - `HOST` and `PORT` are set, to `0.0.0.0` and `8080` by default. The application must read them or listen on 8080 anyway.
@@ -46,4 +46,4 @@ All three links are optional. A variable is present only while its link exists a
 ## Check the result
 
 - `curl -s -o /dev/null -w '%{http_code}' localhost:8080` from the container shows whether the application answers on the expected port.
-- `go build ./... && go vet ./...` in the checkout shows compile errors before a restart does.
+- `go build ./... && go vet ./...` in the checkout shows compile errors at once; the service's logs show them too when a change does not appear.
