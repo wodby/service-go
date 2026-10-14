@@ -66,7 +66,8 @@ See the [service manifest reference](https://wodby.com/docs/2.0/services/templat
 ## Development workspaces
 
 `workspace-go prepare` resolves the selected package's dependencies.
-`workspace-go start` recompiles and executes it on every application restart.
+`workspace-go start` compiles and runs it, then compiles again and restarts the application
+whenever a file in the checkout changes. `WORKSPACE_GO_WATCH=0` turns that off.
 `WORKSPACE_GO_PACKAGE` defaults to `.`; `WORKSPACE_GO_COMMAND` overrides startup.
 `HOST` and `PORT` default to `0.0.0.0` and `8080`, but the application must read them.
 Builds use temporary module metadata and `-mod=readonly`, preserving repository
