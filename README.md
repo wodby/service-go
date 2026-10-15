@@ -26,7 +26,7 @@ build configuration and Wodby CI:
 | --- | --- |
 | Service name | `go` |
 | Type | Application service |
-| Versions | `1.26` by default |
+| Versions | `1.27` by default, `1.26` |
 | Workloads | `main` (Deployment), primary; scalable |
 | Containers | `go` using `wodby/go`, build target |
 | Endpoints | `go`: HTTP 8080 (main) |
