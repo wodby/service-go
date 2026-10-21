@@ -10,10 +10,10 @@ labels:
 options:
 - version: '1.27'
   default: true
-  tag: 1.27-r4
+  tag: 1.27-r5
   devTag: 1.27-dev-r4
 - version: '1.26'
-  tag: 1.26-r4
+  tag: 1.26-r5
   devTag: 1.26-dev-r4
 endpoints:
 - name: go
