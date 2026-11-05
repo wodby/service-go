@@ -148,6 +148,10 @@ workloads:
   containers:
   - name: go
     image: wodby/go
+    resources:
+      request:
+        cpu: 100
+        memory: 352
     build: true
     helm:
       resources: resources
